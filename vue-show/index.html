@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Vue.js</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+<body>
+	<div id="app" class="container">
+		<div class="form-group">
+			<form>
+				<p class="bg-danger" v-show="!message">You must enter a message</p>
+
+				<textarea class="form-control" v-model="message"></textarea>
+
+				<button type="submit" class="btn btn-default" v-show="message">
+					Send Message
+				</button>
+			</form>
+
+			<h2>Filtered output</h2>
+			<br />
+			<pre>
+				{{ $data | json }}
+			</pre>		
+		</div>
+	</div>
+
+	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.22/vue.min.js"></script>
+
+	<script>
+		new Vue({
+			el: '#app',
+			data: {
+				message: ''
+			}
+		})
+	</script>
+</body>
+</html>
